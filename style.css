@@ -1,0 +1,379 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+}
+/*Font Declarations*/
+@font-face {
+    font-family: Montserrat;
+    src: url(/assets/Montserrat/Montserrat-VariableFont_wght.ttf);
+}
+/*Variable Declarations*/
+:root{
+    --background-color: #402e32;
+    --text-color-button: #402e32;
+    --text-color-headline: #f5f5f5;
+    --text-color-paragraph: #dfe0df;
+    --accent-main: #efad02;
+    --color-overlay: rgba(64, 46,50, 0.47);
+    --color-overlay-start: rgba(64, 46,50, 0.8);
+    --color-overlay-showroom: radial-gradient(circle, rgba(64,46,50,0.45) 0%, rgba(64,46,50,0.92) 77%, rgba(64,46,50,1) 100%);
+    --font-family: Montserrat;
+    --font-size: 1;
+    --line-height: 1;
+    --font-weight-headline: 600;
+    --font-weight-paragraph: 400;
+    --gap: 12;
+}
+body{
+    background-color: var(--background-color);
+}
+h1, h2, h3, h4, h5, h6{
+    color: var(--text-color-headline);
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-headline);
+}
+p, a, span{
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-paragraph);
+    color: var(--text-color-paragraph);
+    text-decoration: none;
+}
+p{
+    color: var(--text-color-paragraph);
+    font-size: calc(var(--font-size) * 1.2rem);
+    line-height: calc(var(--line-height) * 1.4);
+}
+a{
+    color: var(--text-color-button);
+}
+h1{
+    font-size: calc(var(--font-size) * 3.5rem);
+    line-height: calc(var(--line-height) * 1.1);
+}
+h2{
+    font-size: calc(var(--font-size) * 2.8rem);
+    line-height: calc(var(--line-height) * 1.75);
+}
+h3{
+    font-size: calc(var(--font-size) * 2rem);
+}
+.highlights{
+    color: var(--accent-main);
+}
+h4{
+    font-size: calc(var(--font-size) * 1.5rem);
+}
+h5 {
+    font-size: calc(var(--font-size) * 1.3rem);
+}
+h6 {
+    font-size: calc(var(--font-size) * 1.2rem);
+}
+/*Class for assigning elements to display flex in html code - just insert class into class attribute of the html element*/
+.display-flex{ 
+    display: -webkit-box;      
+    display: -moz-box;      
+    display: -ms-flexbox; 
+    display: -webkit-flex; 
+    display: flex;
+}
+/*Class for centering elements in html code - just insert class into class attribute of the html element*/
+.center{ 
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.center-horizontal{
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+.center-vertical{
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+/*Class for assigning different flex-attributes*/
+.space-between{
+    -webkit-box-pack: justify;
+    -moz-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+.space-around{
+    -webkit-box-pack: justify;
+    -moz-box-pack: justify;
+    -webkit-justify-content: space-around;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+}
+/*Class for assigning flex-direction row to elements in html code - just insert class into class attribute of the html element*/
+.row{ 
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+/*Class for assigning flex-direction column to elements in html code - just insert class into class attribute of the html element*/
+.column{
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+.button-main{
+    background-color: var(--accent-main);
+    color: var(--text-color-button);
+    padding: 10px 20px;
+    width: fit-content;
+}
+.button-secondary{
+    background: transparent;
+    color: var(--accent-main);
+    text-decoration: underline;
+}
+.button-main p{
+    margin-left: calc(var(--gap) * 1.1px);
+    color: var(--text-color-button);
+    font-weight: var(--font-weight-headline);
+}
+form{
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-paragraph);
+}
+.img-wrapper{
+    position: relative;
+    overflow: hidden;
+}
+.img-wrapper .img-overlay{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--color-overlay);
+}
+.img-overlay-showroom{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: var(--color-overlay-showroom);
+    z-index: -50;
+    margin-top: 0!important;
+}
+#button-appointment{
+    position: sticky;
+    position: -webkit-sticky;
+    top: 10px;
+    z-index: 1000;
+}
+#button-appointment .iconify{
+    font-size: calc(var(--font-size) * 1.5rem);
+    animation: phone-shake 5s linear infinite;
+}
+
+@keyframes phone-shake {
+    0%{
+        transform: rotate(0deg);
+    }    
+    3%{
+        transform: rotate(45deg);
+    }
+    5%{
+        transform: rotate(-45deg);
+    }
+    6%{
+        transform: rotate(0deg);
+    }
+}
+main, header, footer{
+    overflow: hidden;
+}
+header{
+    position: relative;
+    height: 10vh;
+    max-height: 10vh!important;
+}
+header img{
+    height: 95%;
+}
+nav a{
+    margin-left: calc(var(--gap) * 2px);
+}
+
+#start-screen{
+    position: relative;
+    height: 90vh;
+    background: url(/media/hintergrund-ks-werbeagentur.jpg) no-repeat;
+    background-size: cover;
+}
+#start-screen > *{
+    margin-top: calc(var(--gap) * .3%);
+    z-index: 0;
+}
+#start-screen h1{
+    margin-top: 0!important;
+}
+#start-screen p{
+    width: 50%;
+}
+.overlay{
+    position: absolute;
+    height: 100%!important;
+    width: 100%!important;
+    background-color: var(--color-overlay-start);
+    margin-top: 0!important;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+#logo{
+    padding: 30px 20%;
+    height: 13vh;
+}
+#video-section{
+    height: 100vh;
+}
+#video-text-container > *{
+    width: 50%;
+    height: 80%;
+}
+#video-column{
+    padding-right: 10%;
+}
+#signage-details{
+    width: 80%;
+    height: 20%;
+    text-align: center;
+}
+#signage-details .iconify{
+    color: var(--text-color-paragraph);
+    font-size: calc(var(--font-size) * 4rem);
+}
+#service-section{
+    min-height: 100vh;
+}
+#service-section .service-offers{
+    width: 30%;
+}
+#service-section .service-offers > *{
+    margin-top: calc(var(--gap)*.4%);
+}
+#service-section .service-section-wrapper{
+    width: 80%;
+    margin: auto;
+}
+#featured-product-section{
+    margin-top: 20vh;
+    width: 100%;
+    max-height: 100vh;
+    overflow: hidden;
+}
+#featured-product-section .img-wrapper, #featured-product-section .content-wrapper{
+    width: 50%;
+}
+#featured-product-section .img-wrapper img{
+    height: 100%;
+    width: 100%;
+}
+#featured-product-section .content-wrapper{
+    padding: 0 5%;    
+}
+#featured-product-section .content-wrapper p{
+    line-height: 1.5em;
+
+}
+#featured-product-section .content-wrapper *{
+    margin-top: 40px!important;    
+}
+#featured-product-section a{
+    display: block;
+}
+/*Showroom Section Styles*/
+#showroom-section{
+    position: relative;
+    background: url(/media/fitnessstudio-showroom-vorschau.png) no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    z-index: -100;
+    margin-top: 20vh;
+}
+#showroom-section *{
+    margin-top: 30px;
+}
+#review-section{
+    height: 100vh;
+    width: 100vw;
+    padding: 10% 0;
+}
+.review-slider{
+    width: 80%;
+    margin: auto;
+}
+#review-section .review-slider .review-item{
+    margin: 10px;
+    padding: 50px;
+    text-align: center;
+    overflow: hidden;
+    background-color: var(--text-color-paragraph);
+}
+#review-section .review-slider .review-item h3{
+    color: var(--text-color-button);
+}
+#review-section .review-slider .review-item p{
+    color: var(--text-color-button);
+}
+#review-section .review-slider .review-item img{
+    height: 80px;
+    width: 80px;
+    border-radius: 100%;
+    margin: 30px auto;
+}
+#review-section h2{
+    margin-left: 10%;
+}
+.contact-content{
+    width: 50%;
+    padding:0 2%;
+}
+.contact-form{
+    width: 50%
+}
+.contact-form form{
+    width: 90%;
+}
+.contact-form input{
+    padding: 10px;
+}
+.contact-form label{
+    color: var(--text-color-paragraph);
+}    
+
+/*Media Querys*/
+@media screen and (min-width: 769px) {
+    #start-screen{
+        padding: 0 10%;
+    }
+}
